@@ -58,9 +58,9 @@ William Zhang
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
-* [Great Youtube Tutorial on using Edamam API by ](https://www.youtube.com/watch?v=xc4uOzlndAk&t=922s&ab_channel=developedbyed)
+* [Great Youtube Tutorial on using Edamam API ](https://www.youtube.com/watch?v=xc4uOzlndAk&t=922s&ab_channel=developedbyed)
 * [Edemam API Documentation](https://developer.edamam.com/edamam-docs-recipe-api)
-*
 
-##Contributing
+
+## Contributing
 Pull requests are welcome! For major refactors, please open an issue first to discuss what you would like to improve. Feel free to create a fork of this repository and use the code for any noncommercial purposes.
