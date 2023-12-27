@@ -16,36 +16,33 @@ A Webserver Application to generate personalized Spotify Song recommendations ba
 
 ### Dependencies
 
-* Dependencies are listed in the requirements.txt file
-* Alternatively set up can be done by navigating to the project folder and running the setup.py script
-   ```sh
-  python setup.py install
-  ```
+* Dependencies are listed in the package.json file
+
 
 ### Installing
 
 
-* Few modifications need to be made before the program can be run
-  1. Get your own free Client API credentials at https://developer.spotify.com/
-  2. In the app.py change
+* If you wish to locally run the server, few modifications need to be made.
+  1. Get your own free Edamam API credentials at https://developer.edamam.com/edamam-recipe-api
+  2. In the App.js change
      ```sh
-     CLIENT_ID = '<dummy_Client_ID>'
-     CLIENT_SECRET = '<dummy_CLIENT_SECRET>'
+     const APP_ID = "<dummy_appID"
+     const APP_KEY = "<dummy_appKey"
      ```
      to
        ```sh
-     CLIENT_ID = '<insert_your_client_id'
-     CLIENT_SECRET = '<insert_your_client_secret'
+       const APP_ID = "<insert_your_appID"
+       const APP_KEY = "<insert_your_appKey"
      ```
 
 ### Executing program
 
-* My actively running website can be found under http://williamzhang.eu.pythonanywhere.com/
-* Note: only emails/spotify accounts that have been granted permission by me can use the website.
+* My website is running under the url: https://reciperecommendation-fd745.web.app
+
   
 * Running the webserver on your own machine, after setting up as listed above, can be done as follows:
 ```
-flask run
+npm run
 ```
 
 ## Help
@@ -61,9 +58,9 @@ William Zhang
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
-* [Great Youtube Tutorial by Jason Goodison](https://www.youtube.com/watch?v=g6IAGvBZDkE&ab_channel=JasonGoodison)
-* [SpotifyAPI doc](https://developer.spotify.com/documentation/web-api)
-* [Spotipy Doc](https://spotipy.readthedocs.io/en/2.22.1/)
+* [Great Youtube Tutorial on using Edamam API by ](https://www.youtube.com/watch?v=xc4uOzlndAk&t=922s&ab_channel=developedbyed)
+* [Edemam API Documentation](https://developer.edamam.com/edamam-docs-recipe-api)
+*
 
 ##Contributing
 Pull requests are welcome! For major refactors, please open an issue first to discuss what you would like to improve. Feel free to create a fork of this repository and use the code for any noncommercial purposes.
