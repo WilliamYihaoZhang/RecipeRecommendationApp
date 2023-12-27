@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import React, {useEffect,useState} from 'react';
 import Recipe from './recipe';
@@ -16,6 +16,7 @@ function App () {
   const [search,setSearch] = useState(''); //state for the input bar
   const [query,setQuery] = useState('chicken')
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect( ()=>{ //when our apps refreshes/rerenders, the effect runs
     getRecipes();
   },[query])//specify that useeffect is run only when query is submitted
