@@ -5,7 +5,7 @@ A Webserver Application to generate personalized Spotify Song recommendations ba
 
 ## Screenshots
 
-![Recommendations](Project_Screenshot.png)
+![Recommendations](ProjectScreenshot.png)
 
 
 
