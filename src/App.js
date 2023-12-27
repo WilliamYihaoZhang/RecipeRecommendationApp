@@ -18,19 +18,22 @@ function App () {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect( ()=>{ //when our apps refreshes/rerenders, the effect runs
+
+    const getRecipes = async () =>{
+      const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`); //wait for response and fetch the data from this url-request
+      const data = await response.json();
+      setRecipes(data.hits)
+      console.log(data.hits)
+      //alternative fetch(https....).then(response => {
+      // response.json
+      //})
+    };
+
     getRecipes();
   },[query])//specify that useeffect is run only when query is submitted
 
 
-  const getRecipes = async () =>{
-    const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`); //wait for response and fetch the data from this url-request
-    const data = await response.json();
-    setRecipes(data.hits)
-    console.log(data.hits)
-    //alternative fetch(https....).then(response => {
-     // response.json
-    //})
-  }
+  
   
   const updateSearch = e=>{
     setSearch(e.target.value) //using this function to change the value of value
