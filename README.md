@@ -26,13 +26,13 @@ A Webserver Application to generate personalized Spotify Song recommendations ba
   1. Get your own free Edamam API credentials at https://developer.edamam.com/edamam-recipe-api
   2. In the App.js change
      ```sh
-     const APP_ID = "<dummy_appID"
-     const APP_KEY = "<dummy_appKey"
+     const APP_ID = process.env.REACT_APP_EDAMAM_APP_ID;
+     const APP_KEY = process.env.REACT_APP_EDAMAM_APP_KEY;
      ```
      to
        ```sh
-       const APP_ID = "<insert_your_appID"
-       const APP_KEY = "<insert_your_appKey"
+       const APP_ID = "<insert_your_appID>"
+       const APP_KEY = "<insert_your_appKey>"
      ```
 
 ### Executing program
