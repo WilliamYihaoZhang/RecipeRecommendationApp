@@ -7,6 +7,9 @@ function App () {
 
   //const APP_ID = "<dummy_appID"
   //const APP_KEY = "<dummy_appKey"
+
+  const APP_ID = process.env.REACT_APP_EDAMAM_APP_ID;
+  const APP_KEY = process.env.REACT_APP_EDAMAM_APP_KEY;
   
   const [recipes, setRecipes] = useState([]); //used to store recipes
   //Here, recipes is the state variable that will hold the current state, and setRecipes is a function that can be used to update the recipes state. The state variable recipes is initialized as an empty array, but it can be updated to hold any type of data, not just arrays. React will re-render the component whenever setRecipes is called, causing the component to reflect the updated state.
