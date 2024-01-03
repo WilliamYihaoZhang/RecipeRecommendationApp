@@ -10,16 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      REACT_APP_EDAMAM_APP_ID: ${{ secrets.YOUR_REACT_APP_EDAMAM_APP_ID_SECRET }}
-      REACT_APP_EDAMAM_APP_KEY: ${{ secrets.YOUR_REACT_APP_EDAMAM_APP_KEY_SECRET }}
+      REACT_APP_EDAMAM_APP_ID: ${{ secrets.REACT_APP_EDAMAM_APP_ID }}
+      REACT_APP_EDAMAM_APP_KEY: ${{ secrets.REACT_APP_EDAMAM_APP_KEY }}
 
     steps:
       - uses: actions/checkout@v3
       - run: npm ci && npm run build
 
       - name: Set Environment Variables
-        run: echo "REACT_APP_EDAMAM_APP_ID=${REACT_APP_EDAMAM_APP_ID}" >> $GITHUB_ENV
-             echo "REACT_APP_EDAMAM_APP_KEY=${REACT_APP_EDAMAM_APP_KEY}" >> $GITHUB_ENV
+        run: |
+          echo "REACT_APP_EDAMAM_APP_ID=${REACT_APP_EDAMAM_APP_ID}" >> $GITHUB_ENV
+          echo "REACT_APP_EDAMAM_APP_KEY=${REACT_APP_EDAMAM_APP_KEY}" >> $GITHUB_ENV
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
