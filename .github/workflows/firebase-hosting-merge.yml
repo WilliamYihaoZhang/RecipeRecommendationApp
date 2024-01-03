@@ -9,9 +9,15 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
 
+    env:
+      REACT_APP_EDAMAM_APP_ID: ${{ secrets.REACT_APP_EDAMAM_APP_ID }}
+      REACT_APP_EDAMAM_APP_KEY: ${{ secrets.REACT_APP_EDAMAM_APP_KEY }}
+      FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_RECIPERECOMMENDATION_FD745 }}
+      CHANNEL_ID: live
+      PROJECT_ID: reciperecommendation-fd745
+
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -19,16 +25,11 @@ jobs:
           node-version: 14
 
       - name: Install Dependencies
-        run: npm install
-
-      - name: Set Environment Variables
-        run: |
-          echo "REACT_APP_EDAMAM_APP_ID=${{ secrets.REACT_APP_EDAMAM_APP_ID }}" >> $GITHUB_ENV
-          echo "REACT_APP_EDAMAM_APP_KEY=${{ secrets.REACT_APP_EDAMAM_APP_KEY }}" >> $GITHUB_ENV
+        run: npm ci
 
       - name: Build and Deploy
         run: npm run build && API_ID=$REACT_APP_EDAMAM_APP_ID API_KEY=$REACT_APP_EDAMAM_APP_KEY npm run deploy
-
-      env:
-        REACT_APP_EDAMAM_APP_ID: ${{ secrets.REACT_APP_EDAMAM_APP_ID }}
-        REACT_APP_EDAMAM_APP_KEY: ${{ secrets.REACT_APP_EDAMAM_APP_KEY }}
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ env.FIREBASE_SERVICE_ACCOUNT }}
+          CHANNEL_ID: ${{ env.CHANNEL_ID }}
+          PROJECT_ID: ${{ env.PROJECT_ID }}
