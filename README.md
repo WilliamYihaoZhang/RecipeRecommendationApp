@@ -1,6 +1,6 @@
-# SpotifyRecommendationAPP
+# RecipeRecommendationApp
 
-A Webserver Application to generate personalized Spotify Song recommendations based on the user's top songs.
+A Webserver Application to allow users to search for thousands of recipes by searching with keywords.
 
 
 ## Screenshots
